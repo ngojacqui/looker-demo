@@ -1,5 +1,5 @@
 view: dim_products {
-  sql_table_name: {{ _user_attributes['demo_dbt_dataset'] }}.dim_products ;;
+  sql_table_name: bigquery-public-data.thelook_ecommerce.products ;;
   view_label: "Products"
   label: "Products"
 
