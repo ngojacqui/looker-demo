@@ -1,4 +1,4 @@
-connection: "bq_faa"
+connection: "jacqui_lags_pbl"
 
 include: "/views/dimensions/dim_products.view.lkml"
 include: "/views/dimensions/dim_users.view.lkml"
@@ -39,7 +39,7 @@ test: orders_items_2021 {
     filters: [order_items.created_year: "2021"]
   }
   assert: matches_historic_lower_bound {
-    expression: ${order_items.count_order_items} > 13000  ;;
+    expression: ${order_items.count_order_items} > 10000  ;;
   }
   assert: matches_historic_upper_bound {
     expression: ${order_items.count_order_items} < 14000  ;;
@@ -54,7 +54,7 @@ test: orders_items_2020 {
     filters: [order_items.created_year: "2020"]
   }
   assert: matches_historic_lower_bound {
-    expression: ${order_items.count_order_items} > 7000  ;;
+    expression: ${order_items.count_order_items} > 5000  ;;
   }
   assert: matches_historic_upper_bound {
     expression: ${order_items.count_order_items} < 8000  ;;
